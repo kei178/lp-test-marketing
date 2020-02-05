@@ -61,7 +61,7 @@
       $('.btn-modal').click(function() {
         $('.ui.modal').modal('show')
         // Facebook Pixel Event
-        fbq('track', 'ViewContent');
+        fbq('track', 'ViewContent')
       })
       ;
 
@@ -71,6 +71,11 @@
           $('#mc-embedded-subscribe-form').submit()
           $('#mce-EMAIL').val(null)
           $('.mc_success_msg').removeClass('hidden')
+          // Facebook Pixel Event
+          fbq('track', 'CompleteRegistration', {
+            value: 250,
+            currency: 'JPY',
+          })
         }
       })
     })
